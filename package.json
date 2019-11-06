@@ -1,11 +1,16 @@
 {
-  "name": "auddraggable",
-  "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "name": "audie-dynamic-box",
+  "version": "0.0.22",
+  "description": "Just for practice",
+  "author": "reynaldoqs@gmail.com",
+  "license": "MIT",
+  "main": "./dist/index.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build --target lib --name index src/index.js",
+    "lint": "vue-cli-service lint",
+    "publish": "npm publish"
   },
   "dependencies": {
     "vue": "^2.6.10"

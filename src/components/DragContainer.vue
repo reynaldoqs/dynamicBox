@@ -3,7 +3,7 @@
     <div ref='mask' :style="maskStyles">
         <drag-mask />
     </div>
-    <div ref='dragElement' class="default-bg" :style="elementStyles">
+    <div ref='dragElement' :class="{'default-bg':true, 'opened': isOpened && !isExpanded}" :style="elementStyles">
         <drag-element :isOpened="isOpened" :isExpanded="isExpanded" @expandBox="isExpanded = true" @compressBox="isExpanded = false" @openBox="isOpened = true" @closeBox="isOpened = false">
             <slot slot='element'/>
         </drag-element>
@@ -200,6 +200,7 @@ export default {
         },
         doItSticky() {
             if (!this.sticky) return
+            console.log('is sticky');
             let sL = 0
             const findScrollableElement = (el) => {
                 try {
@@ -281,12 +282,16 @@ export default {
     user-select: none;
 }
 .drag-container {
-    background-color: red;
     display: inline-block;
     position: relative;
 }
 
 .default-bg {
     background-color: #313131;
+}
+.opened{
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    overflow: hidden;
 }
 </style>

@@ -10,7 +10,6 @@ export default {
     data() {
         return {
             styleObject: {
-                backgroundColor: 'red',
                 width: null,
                 height: null
             }
